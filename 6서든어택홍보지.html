@@ -1,160 +1,293 @@
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-    <title>R DESIGN</title>
+    <title>R DESIGN | 서든어택 홍보지</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+
     <style>
-   a {
-        color: white;
-        text-decoration: none;
-        transition: 0.3s;
-     }
+        * {
+            box-sizing: border-box;
+        }
 
-     a:hover {
-        color: #c9a96e;
-     }
+        body {
+            background-color: #111;
+            color: #f5f5f5;
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
 
-     body {
-      background-color: #111;
-      color: #f5f5f5;
-      margin: 0;
-     }
+        a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
 
-     h1 {
-        font-size: 60px;
-        text-align: center;
-        border-bottom: 2px solid #333;
-        margin: 0;
-        padding: 20px;
-     }
+        a:hover {
+            color: #c9a96e;
+        }
 
-     h2 {
-      margin-top: 50px;
-      margin-left: 0px;
-      font-size: 30px;
-      color: #ffffff;
-      text-align: center;
-     }
+        h1 {
+            font-size: 60px;
+            text-align: center;
+            border-bottom: 1px solid #2a2a2a;
+            margin: 0;
+            padding: 24px 20px 20px;
+            letter-spacing: 4px;
+            font-weight: 800;
+            background-color: #111;
+        }
 
-     .intro {
-      padding-bottom: 100px;
-      margin-left: 40px;
-      font-size: 30px;
-      color: #d6d6d6;
-      line-height: 1.7;
-     }
+        ol {
+            border-bottom: 1px solid #2a2a2a;
+            margin: 0;
+            padding: 14px 10px;
+            text-align: center;
+            list-style: none;
+            background-color: #151515;
+        }
 
-     ol {
-      border-bottom: 2px solid #333;
-      margin: 0;
-      padding: 10px;
-      text-align: center;
-      list-style: none;
-     }
+        ol > li {
+            display: inline-block;
+            margin: 0 24px;
+            font-size: 18px;
+            position: relative;
+            z-index: 100;
+        }
 
-     ol > li {
-      display: inline-block;
-      margin-right: 50px;
-      font-size: 20px;
-      position: relative;
-     }
+        ol > li > a {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            letter-spacing: 1px;
+        }
 
+        ol > li > a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background-color: #c9a96e;
+            transition: width 0.3s ease;
+        }
 
-     /* 드롭다운 메뉴 */
-     .submenu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: black;
-      border: 1px solid white;
-      padding: 10px 0;
-      min-width: 180px;
-      list-style: none;
-      text-align: left;
-     }
+        ol > li > a:hover::after {
+            width: 100%;
+        }
 
-     .submenu li {
-      display: block;
-      margin: 0;
-      padding: 10px 20px;
-      white-space: nowrap;
-     }
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            padding: 10px 0;
+            min-width: 180px;
+            list-style: none;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+        }
 
-     .submenu li a {
-      display: block;
-     }
+        .submenu li {
+            display: block;
+            margin: 0;
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
 
-     .dropdown:hover .submenu {
-      display: block;
-     }
+        .submenu li a {
+            display: block;
+        }
 
-     .submenu li:hover {
-      background-color: #222;
-     }
-     
-     .portfolio{
-      display: grid;
-      grid-template-columns: repeat(5,1fr);
-      gap: 30px;
-      padding: 40px;
-      }
-      
-      .item img{
-        width: 100%;
-        height: auto;
-        object-fit: block;
-      }
-     
-      .item img:hover{
-        transform: scale(1.05);
-        transition: 0.3s;
-      }
+        .dropdown:hover .submenu {
+            display: block;
+        }
 
-      .modal{
-        display: none;
-        position: fixed;
-        z-index: 9999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,9);
-        text-align: center;
-      }
+        .submenu li:hover {
+            background-color: #222;
+        }
 
-      .modal-content{
-        display: block;
-        margin: 40px auto;
-        width: auto;
-        height: auto;
-        max-width: 90vw;
-        max-height: 90vh;
-      }
-      
-      .modal-wrapper{
-        position: relative;
-        display: inline-block;
-      }
+        .page-title {
+            text-align: center;
+            padding: 60px 20px 10px;
+        }
 
-      .close{
-        position: absolute;
-        bottom: 10px;
-        right: 0px;
-        top: auto;
-        color: white;
-        background: rgba(0,0,0,55);
-        font-size: 18px;
-        padding: 6px 9px;
-        border-radius: 6px;
-        cursor: pointer;
-      }
+        .page-title h2 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+        }
 
-      .close{
-        background: rgba(0,0,0,0);
-      }
+        .page-title p {
+            margin-top: 12px;
+            color: #bbb;
+            font-size: 16px;
+        }
 
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            padding: 40px;
+            max-width: 1400px;
+            margin: 0 auto 100px;
+        }
+
+        .item {
+            background-color: #181818;
+            padding: 12px;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            transition: 0.35s ease;
+        }
+
+        .item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #c9a96e;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .item img:hover {
+            transform: scale(1.02);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.92);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .modal-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-top: 30px;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+
+        .modal-content {
+            display: block;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        .close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            color: white;
+            background: rgba(0, 0, 0, 0.45);
+            font-size: 22px;
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 14px;
+            background-color: #111;
+        }
+
+        @media (max-width: 1024px) {
+            .portfolio {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 38px;
+                padding: 18px 16px 16px;
+                letter-spacing: 2px;
+            }
+
+            ol {
+                padding: 12px 10px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+
+            ol > li {
+                margin: 0 8px;
+                font-size: 16px;
+            }
+
+            .submenu {
+                min-width: 150px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+            }
+
+            .page-title {
+                padding: 40px 20px 0;
+            }
+
+            .page-title h2 {
+                font-size: 28px;
+            }
+
+            .page-title p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .portfolio {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+                padding: 20px 14px 60px;
+            }
+
+            .item {
+                padding: 8px;
+                border-radius: 14px;
+            }
+
+            footer {
+                font-size: 12px;
+                padding: 16px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -162,7 +295,7 @@
 
     <ol>
         <li class="dropdown">
-            <a><strong>홍보지</strong></a>
+            <a href="#"><strong>홍보지</strong></a>
             <ul class="submenu">
                 <li><a href="5산업홍보지.html">산업 홍보지</a></li>
                 <li><a href="6서든어택홍보지.html">서든어택 홍보지</a></li>
@@ -172,70 +305,75 @@
         </li>
 
         <li><a href="3웹디자인.html"><strong>웹디자인</strong></a></li>
-        <li><a href="4각종디자인.html"><strong>기타디자인</strong></a></li>
+        <li><a href="4기타디자인.html"><strong>기타디자인</strong></a></li>
         <li><a href="http://pf.kakao.com/_kBMDn" target="_blank" rel="noopener noreferrer"><strong>문의하기</strong></a></li>
     </ol>
 
-    <h2>서든어택 홍보지</h2>
+    <section class="page-title">
+        <h2>서든어택 홍보지</h2>
+        <p>클릭하면 이미지를 크게 볼 수 있습니다.</p>
+    </section>
 
     <div class="portfolio">
+        <div class="item">
+            <img src="서든1.gif" alt="서든어택 홍보지 1" onclick="openModal(this)">
+        </div>
 
-    <div class="item">
-        <img src="서든1.gif" onclick="openmodal(this)">
-    </div>
+        <div class="item">
+            <img src="서든2.gif" alt="서든어택 홍보지 2" onclick="openModal(this)">
+        </div>
 
-     <div class="item">
-        <img src="서든2.gif" onclick="openmodal(this)">
-    </div>
+        <div class="item">
+            <img src="서든3.gif" alt="서든어택 홍보지 3" onclick="openModal(this)">
+        </div>
 
-     <div class="item">
-        <img src="서든3.gif" onclick="openmodal(this)">
-    </div>
+        <div class="item">
+            <img src="서든4.gif" alt="서든어택 홍보지 4" onclick="openModal(this)">
+        </div>
 
-     <div class="item">
-        <img src="서든4.gif" onclick="openmodal(this)">
-    </div>
+        <div class="item">
+            <img src="서든5.gif" alt="서든어택 홍보지 5" onclick="openModal(this)">
+        </div>
 
-    <div class="item">
-        <img src="서든5.gif" onclick="openmodal(this)">
-    </div>
+        <div class="item">
+            <img src="서든6.gif" alt="서든어택 홍보지 6" onclick="openModal(this)">
+        </div>
 
-    <div class="item">
-        <img src="서든6.gif" onclick="openmodal(this)">
-    </div>
-
-    <div class="item">
-        <img src="서든7.gif" onclick="openmodal(this)">
-    </div>
-
-</div>
-
-    <div id="modal" class="modal" onclick="closemodal()">
-      <div id="modal" class="modal-wrapper">
-        <img class="modal-content" id="modal-img">
-        <span class="close">&times;</span>
+        <div class="item">
+            <img src="서든7.gif" alt="서든어택 홍보지 7" onclick="openModal(this)">
         </div>
     </div>
-    
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-wrapper" onclick="event.stopPropagation()">
+            <img class="modal-content" id="modal-img" alt="확대 이미지">
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+    </div>
+
+    <footer>
+        COPYRIGHT(C) 2026 R DESIGN ALL RIGHTS RESERVED.
+    </footer>
+
     <script>
+        function openModal(img) {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modal-img");
 
-      function openmodal(img){
-        var modal=document.getElementById("modal");
-        var modalimg=document.getElementById("modal-img");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+        }
 
-        modal.style.display="block";
-        modalimg.src=img.src;
-      }
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
 
-      function closemodal(){
-        document.getElementById("modal").style.display="none";
-      }
-
-      document.querySelector(".close").onclick = function(e){
-        e.stopPropagation();
-        closemodal();
-      }
-      </script>
-      
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
