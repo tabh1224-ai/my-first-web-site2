@@ -8,18 +8,23 @@
      a {
         color: white;
         text-decoration: none;
+        transition: 0.3s;
+     }
+
+     a:hover {
+        color: #c9a96e;
      }
 
      body {
-      background-color: black;
-      color: white;
+      background-color: #111;
+      color: #f5f5f5;
       margin: 0;
      }
 
      h1 {
         font-size: 60px;
         text-align: center;
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid #333;
         margin: 0;
         padding: 20px;
      }
@@ -28,16 +33,19 @@
       margin-top: 200px;
       margin-left: 40px;
       font-size: 30px;
+      color: #ffffff;
      }
 
      .intro {
       padding-bottom: 100px;
       margin-left: 40px;
       font-size: 30px;
+      color: #d6d6d6;
+      line-height: 1.7;
      }
 
      ol {
-      border-bottom: 2px solid white;
+      border-bottom: 2px solid #333;
       margin: 0;
       padding: 10px;
       text-align: center;
@@ -49,14 +57,69 @@
       margin-right: 50px;
       font-size: 20px;
       position: relative;
+      z-index: 100;
      }
 
-     img {
-      width: 1200px;
-      max-width: 100%;
+     .hero{
+        position: relative;
+        text-align: center;
+        width: 100%;
+        height: 70vh;
+        overflow: hidden;
+        z-index: 1;
+     }
+     
+     .hero::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1;
+     }
+     
+     .hero::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.45);
+     }
+
+     .main-img {
+      width: 100%;
       height: auto;
-      float: right;
-      margin-right: 40px;
+      object-fit: cover;
+      display: block;
+      margin: 1px auto;
+     }
+     
+     .hero-text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        z-index: 2;
+     }
+
+     .hero-text h2{
+        font-size: 60px;
+        font-weight: 700;
+        margin: 0;
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+     }
+
+     .hero-text p{
+        font-size: 20px;
+        margin-top: 10px;
+        color: white;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
      }
 
      /* 드롭다운 메뉴 */
@@ -65,12 +128,13 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: black;
-      border: 1px solid white;
+      background-color: #1a1a1a;
+      border: 1px solid #444;
       padding: 10px 0;
       min-width: 180px;
       list-style: none;
       text-align: left;
+      z-index: 9999;
      }
 
      .submenu li {
@@ -91,6 +155,118 @@
      .submenu li:hover {
       background-color: #222;
      }
+
+     h3 {
+        text-align: center;
+        display: block;
+        padding: 50px;
+        padding-bottom: 30px;
+        font-size: 30px;
+        color: #ffffff;
+     }
+
+     .review-img{
+        width: 260px;
+        gap: 30px;
+        padding: 5px;
+        border: 2px solid #444;
+        border-color: #c9a96e;
+        border-radius: 10px;
+        transition: 0.3s;
+     }
+
+     .review-img:hover{
+        transform: scale(1.05);
+     }
+
+     .portfolio{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+     }
+
+     .item{
+        text-align: center;
+     }
+
+     footer{
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid #333;
+        color: #888;
+        font-size: 14px;
+     }
+
+     @media (max-width: 768px) {
+  h1 {
+    font-size: 38px;
+    padding: 16px;
+  }
+
+  ol {
+    padding: 12px 10px;
+  }
+
+  ol > li {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  .submenu {
+    min-width: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .hero {
+    height: 45vh;
+  }
+
+  .main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+  }
+
+  .hero-text {
+    width: 90%;
+  }
+
+  .hero-text h2 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: 24px;
+    padding: 35px 20px 20px 20px;
+  }
+
+  .portfolio {
+    gap: 14px;
+    padding: 0 14px;
+  }
+
+  .review-img {
+    width: 42vw;
+    max-width: 180px;
+    padding: 4px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 16px 10px;
+  }
+}
+     
     </style>
 </head>
 <body>
@@ -100,10 +276,10 @@
         <li class="dropdown">
             <a><strong>홍보지</strong></a>
             <ul class="submenu">
-                <li><a href="5산업홍보지.html">산업홍보지</a></li>
-                <li><a href="6서든어택홍보지.html">서든어택홍보지</a></li>
-                <li><a href="7아이온2홍보지.html">아이온2홍보지</a></li>
-                <li><a href="8기타 홍보지.html">기타홍보지</a></li>
+                <li><a href="5산업홍보지.html">산업 홍보지</a></li>
+                <li><a href="6서든어택홍보지.html">서든어택 홍보지</a></li>
+                <li><a href="7아이온2홍보지.html">아이온2 홍보지</a></li>
+                <li><a href="8기타 홍보지.html">기타 홍보지</a></li>
             </ul>
         </li>
 
@@ -112,13 +288,42 @@
         <li><a href="http://pf.kakao.com/_kBMDn" target="_blank" rel="noopener noreferrer"><strong>문의하기</strong></a></li>
     </ol>
 
-    <img src="메인이미지.jpg" alt="메인이미지">
+   
+    <div class="hero">
+    <img src="메인이미지.jpg" alt="메인이미지" class="main-img">
 
-    <h2>소개</h2>
-
-    <div class="intro">
-      <strong>(게임,산업)홍보지,명함,웹제작,웹디자인 등 <br>다양한 디자인을 제작하는 R 디자인입니다.</strong>
+    <div class="hero-text">
+        <h2>R DESIGN</h2>
+        <p><strong>게임홍보지 · 산업디자인 · 각종디자인 · 웹디자인 등</strong></p>
     </div>
+    </div>
+
+    <h3>후 기</h3>
+
+    <div class="portfolio">
+
+    <div class="item">
+        <img src="후기1.png" class="review-img">
+    </div>
+
+    <div class="item">
+        <img src="후기2.png" class="review-img">
+    </div>
+
+    <div class="item">
+        <img src="후기3.png" class="review-img">
+    </div>
+
+    <div class="item">
+        <img src="후기4.png" class="review-img">
+    </div>
+    </div>
+
+    <div style="clear: both; height: 200px;"></div>
+
+    <footer>
+        COPYRIGHT(C) 2026 R DESIGN ALL RIGHTS RESERVED.
+    </footer>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VJGEDK4Y1"></script>
@@ -128,5 +333,6 @@
       gtag('js', new Date());
       gtag('config', 'G-4VJGEDK4Y1');
     </script>
+    
 </body>
 </html>
