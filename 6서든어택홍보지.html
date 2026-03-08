@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+    <title>R DESIGN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+     a {
+        color: white;
+        text-decoration: none;
+     }
+
+     body {
+      background-color: black;
+      color: white;
+      margin: 0;
+     }
+
+     h1 {
+        font-size: 60px;
+        text-align: center;
+        border-bottom: 2px solid white;
+        margin: 0;
+        padding: 20px;
+     }
+
+     h2 {
+      margin-top: 30px;
+      font-size: 40px;
+      text-align: center;
+     }
+
+     ol {
+      border-bottom: 2px solid white;
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+      list-style: none;
+     }
+
+     ol > li {
+      display: inline-block;
+      margin-right: 50px;
+      font-size: 20px;
+      position: relative;
+     }
+
+
+     /* 드롭다운 메뉴 */
+     .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: black;
+      border: 1px solid white;
+      padding: 10px 0;
+      min-width: 180px;
+      list-style: none;
+      text-align: left;
+     }
+
+     .submenu li {
+      display: block;
+      margin: 0;
+      padding: 10px 20px;
+      white-space: nowrap;
+     }
+
+     .submenu li a {
+      display: block;
+     }
+
+     .dropdown:hover .submenu {
+      display: block;
+     }
+
+     .submenu li:hover {
+      background-color: #222;
+     }
+     
+     .portfolio{
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 30px;
+      padding: 40px;
+      }
+      
+      .item img{
+        width: 100%;
+        height: auto;
+        object-fit: block;
+      }
+     
+      .item img:hover{
+        transform: scale(1.05);
+        transition: 0.3s;
+      }
+
+      .modal{
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,9);
+        text-align: center;
+      }
+
+      .modal-content{
+        display: block;
+        margin: 40px auto;
+        width: auto;
+        height: auto;
+        max-width: 90vw;
+        max-height: 90vh;
+      }
+      
+      .modal-wrapper{
+        position: relative;
+        display: inline-block;
+      }
+
+      .close{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        top: 20px;
+        right: 40px;
+        color: white;
+        background: rgba(0, 0, 0, 6);
+        font-size: 22px;
+        padding: 6px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .close{
+        background: rgba(0,0,0,9);
+      }
+
+    </style>
+</head>
+<body>
+    <h1><a href="1Main.html"><strong>R DESIGN</strong></a></h1>
+
+    <ol>
+        <li class="dropdown">
+            <a><strong>홍보지</strong></a>
+            <ul class="submenu">
+                <li><a href="5산업홍보지.html">산업홍보지</a></li>
+                <li><a href="6서든어택홍보지.html">서든어택홍보지</a></li>
+                <li><a href="7리그오브레전드 홍보지.html">LOL홍보지</a></li>
+                <li><a href="8기타 홍보지.html">기타홍보지</a></li>
+            </ul>
+        </li>
+
+        <li><a href="3웹디자인.html"><strong>웹디자인</strong></a></li>
+        <li><a href="4각종디자인.html"><strong>각종디자인</strong></a></li>
+        <li><a href="http://pf.kakao.com/_kBMDn" target="_blank" rel="noopener noreferrer"><strong>문의하기</strong></a></li>
+    </ol>
+
+    <h2>서든어택 홍보지</h2>
+
+    <div class="portfolio">
+
+    <div class="item">
+        <img src="서든1.gif" onclick="openmodal(this)">
+    </div>
+
+     <div class="item">
+        <img src="서든2.gif" onclick="openmodal(this)">
+    </div>
+
+     <div class="item">
+        <img src="서든3.gif" onclick="openmodal(this)">
+    </div>
+
+     <div class="item">
+        <img src="서든4.gif" onclick="openmodal(this)">
+    </div>
+
+    <div class="item">
+        <img src="서든5.gif" onclick="openmodal(this)">
+    </div>
+
+</div>
+
+    <div id="modal" class="modal" onclick="closemodal()">
+
+      <span class="close">&times;</span>
+      
+      <img class="modal-content" id="modal-img">
+    </div>
+    
+    <script>
+
+      function openmodal(img){
+        var modal=document.getElementById("modal");
+        var modalimg=document.getElementById("modal-img");
+
+        modal.style.display="block";
+        modalimg.src=img.src;
+      }
+
+      function closemodal(){
+        document.getElementById("modal").style.display="none";
+      }
+
+      document.querySelector(".close").onclick = function(e){
+        e.stopPropagation();
+        closemodal();
+      }
+      </script>
+      
+</body>
+</html>
