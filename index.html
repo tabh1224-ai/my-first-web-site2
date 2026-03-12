@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="ko">
 <head>
-
     <link rel="canonical" href="https://rdesign26.com/">
     <link rel="icon" type="image/png" href="favicon.png">
 
@@ -9,21 +8,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="google-site-verification" content="CEqbyKItjqPRWRQSTnH-V-64Uu4xKSCWUec5-7tvKPQ" />
-    <meta name="naver-site-verification" content="f6917274bb485408590531b88a8a93bd2e755b24" />
+    <meta name="google-site-verification" content="CEqbyKItjqPRWRQSTnH-V-64Uu4xKSCWUec5-7tvKPQ">
+    <meta name="naver-site-verification" content="f6917274bb485408590531b88a8a93bd2e755b24">
 
     <meta name="description" content="R DESIGN은 게임 홍보지, 산업 홍보물, 방송 디자인, 배너, 전단지, 웹디자인 제작을 제공합니다. 감각적이고 깔끔한 맞춤 디자인 작업.">
     <meta name="keywords" content="홍보지 디자인, 배너 디자인, 전단지 디자인, 게임 홍보지, 산업 홍보물, 방송 디자인, 웹디자인, R DESIGN">
     <meta name="author" content="R DESIGN">
-    <meta name="robots" content="index, follow">    
+    <meta name="robots" content="index, follow">
 
     <meta property="og:title" content="R DESIGN">
     <meta property="og:description" content="홍보지, 배너, 전단지, 게임 홍보지, 방송 디자인, 웹디자인 제작">
     <meta property="og:url" content="https://rdesign26.com/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://rdesign26.com/preview.jpg">
-    
-    <!-- 폰트 -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -54,7 +52,6 @@
             color: #c9a96e;
         }
 
-        /* 상단 로고 */
         .site-logo {
             font-size: 60px;
             text-align: center;
@@ -66,52 +63,69 @@
             background-color: #111;
         }
 
-        /* 상단 메뉴 */
-        ol {
-            border-bottom: 1px solid #2a2a2a;
-            margin: 0;
-            padding: 14px 10px;
-            text-align: center;
-            list-style: none;
+        .menu-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            gap: 28px;
+            padding: 20px 20px;
             background-color: #151515;
+            border-bottom: 1px solid #2a2a2a;
+            text-align: center;
         }
 
-        ol > li {
-            display: inline-block;
-            margin: 0 24px;
+        .menu-group {
+            min-width: auto;
+        }
+
+        .menu-title {
             font-size: 18px;
-            position: relative;
-            z-index: 100;
-        }
-
-        ol > li > a,
-        ol > li > strong,
-        ol > li > a strong {
+            color: #fff;
+            margin-bottom: 0;
             letter-spacing: 1px;
         }
 
-        ol > li > a {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 4px;
+        .menu-title a {
+            color: white;
+            text-decoration: none;
         }
 
-        ol > li > a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 0;
-            height: 1px;
-            background-color: #c9a96e;
-            transition: width 0.3s ease;
+        .menu-title a:hover {
+            color: #c9a96e;
         }
 
-        ol > li > a:hover::after {
-            width: 100%;
+        .submenu {
+            list-style: none;
+            margin: 14px 0 0;
+            padding: 0;
+            display: none;
         }
 
-        /* 메인 히어로 */
+        .menu-wrap:hover .submenu {
+            display: block;
+        }
+
+        .submenu li {
+            margin: 8px 0;
+        }
+
+        .submenu li a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .submenu li a:hover {
+            color: #c9a96e;
+        }
+
+        .contact-group {
+            display: flex;
+            align-items: flex-start;
+        }
+
         .hero {
             position: relative;
             text-align: center;
@@ -187,43 +201,76 @@
             transform: translateY(-2px);
         }
 
-        /* 드롭다운 */
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #1a1a1a;
-            border: 1px solid #444;
-            padding: 10px 0;
-            min-width: 190px;
-            list-style: none;
-            text-align: left;
-            z-index: 9999;
-            border-radius: 10px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .submenu li {
-            display: block;
+        .portfolio-title {
+            text-align: center;
+            padding: 70px 20px 30px;
+            font-size: 32px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
             margin: 0;
-            padding: 10px 20px;
-            white-space: nowrap;
         }
 
-        .submenu li a {
+        .portfolio-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .portfolio-card {
             display: block;
+            background-color: #181818;
+            border: 1px solid #2b2b2b;
+            border-radius: 18px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: 0.35s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
-        .dropdown:hover .submenu {
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: #c9a96e;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .portfolio-card-title {
             display: block;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
         }
 
-        .submenu li:hover {
-            background-color: #222;
+        .portfolio-card-desc {
+            display: block;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #bcbcbc;
         }
 
-        /* 후기 타이틀 */
+        .about {
+            text-align: center;
+            display: block;
+            padding: 70px 20px 30px;
+            font-size: 32px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+
+        .about-intro {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 20px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.9;
+            color: #cfcfcf;
+        }
+
         .review-title {
             text-align: center;
             display: block;
@@ -234,7 +281,6 @@
             margin: 0;
         }
 
-        /* 후기 카드 */
         .portfolio {
             display: flex;
             justify-content: center;
@@ -287,7 +333,6 @@
             background-color: #111;
         }
 
-        /* 애니메이션 */
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -299,7 +344,6 @@
             }
         }
 
-        /* 모바일 */
         @media (max-width: 768px) {
             .site-logo {
                 font-size: 38px;
@@ -307,25 +351,27 @@
                 letter-spacing: 2px;
             }
 
-            ol {
-                padding: 12px 10px;
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 14px;
+            .menu-wrap {
+                flex-direction: column;
+                gap: 18px;
+                padding: 18px 16px;
             }
 
-            ol > li {
-                display: inline-block;
-                margin: 0 8px;
+            .menu-group {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .menu-title {
                 font-size: 16px;
             }
 
             .submenu {
-                min-width: 150px;
-                left: 50%;
-                transform: translateX(-50%);
-                text-align: center;
+                margin-top: 8px;
+            }
+
+            .submenu li a {
+                font-size: 14px;
             }
 
             .hero {
@@ -347,6 +393,43 @@
                 margin-top: 20px;
                 padding: 11px 24px;
                 font-size: 14px;
+            }
+
+            .portfolio-title {
+                font-size: 24px;
+                padding: 45px 20px 20px;
+            }
+
+            .portfolio-links {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+                padding: 0 14px 10px;
+            }
+
+            .portfolio-card {
+                padding: 20px 14px;
+                border-radius: 14px;
+            }
+
+            .portfolio-card-title {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+
+            .portfolio-card-desc {
+                font-size: 13px;
+                line-height: 1.6;
+            }
+
+            .about {
+                font-size: 24px;
+                padding: 45px 20px 20px;
+            }
+
+            .about-intro {
+                font-size: 15px;
+                line-height: 1.8;
+                padding: 0 18px 10px;
             }
 
             .review-title {
@@ -371,53 +454,160 @@
                 padding: 16px 10px;
             }
         }
+
+        @media (max-width: 480px) {
+            .portfolio-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bottom-ad-banner{
+            position: fixed;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 900px;
+            border: 0px solid #2b2b2b;
+            border-radius: 16px;
+            padding: 12px;
+            z-index: 9999;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.0);
+        }
+
+.bottom-ad-link{
+    display:block;
+}
+
+.bottom-ad-image{
+    width:100%;
+    border-radius:10px;
+}
+
+.bottom-ad-close{
+    position:absolute;
+    top:6px;
+    right:6px;
+    width:32px;
+    height:32px;
+    border:none;
+    border-radius:50%;
+    font-size:20px;
+    background:rgba(0,0,0,0.6);
+    color:#fff;
+    cursor:pointer;
+}
+
+.bottom-ad-close:hover{
+    background:#c9a96e;
+    color:#111;
+}
+
     </style>
 </head>
 <body>
-    <div class="site-logo"><a href="index.html"><strong>R DESIGN</strong></a></div>
+    <div class="site-logo">
+        <a href="index.html"><strong>R DESIGN</strong></a>
+    </div>
 
-    <ol>
-        <li class="dropdown">
-            <a href="#"><strong>홍보지</strong></a>
+    <div class="menu-wrap">
+        <div class="menu-group">
+            <div class="menu-title"><strong>홍보지/전단지</strong></div>
             <ul class="submenu">
-                <li><a href="산업홍보지.html">산업 홍보지</a></li>
-                <li><a href="서든어택홍보지.html">서든어택 홍보지</a></li>
-                <li><a href="아이온2홍보지.html">아이온2 홍보지</a></li>
-                <li><a href="기타 홍보지.html">기타 홍보지</a></li>
+                <li><a href="홍보지전단지.html">홍보지/전단지</a></li>
+                <li><a href="게임.html">게임 홍보지/전단지</a></li>
             </ul>
-        </li>
+        </div>
 
-        <li class="dropdown">
-            <a href="#"><strong>웹디자인</strong></a>
+        <div class="menu-group">
+            <div class="menu-title"><strong>웹디자인</strong></div>
             <ul class="submenu">
                 <li><a href="상세페이지디자인.html">상세페이지 디자인</a></li>
                 <li><a href="패키지디자인.html">패키지 디자인</a></li>
                 <li><a href="배너디자인.html">배너 디자인</a></li>
                 <li><a href="브랜드디자인.html">브랜드 디자인</a></li>
             </ul>
-        </li>
+        </div>
 
-        <li class="dropdown">
-            <a href="#"><strong>기타디자인</strong></a>
+        <div class="menu-group">
+            <div class="menu-title"><strong>로고/명함 디자인</strong></div>
             <ul class="submenu">
                 <li><a href="로고디자인.html">로고 디자인</a></li>
                 <li><a href="명함디자인.html">명함 디자인</a></li>
+            </ul>
+        </div>
+
+        <div class="menu-group">
+            <div class="menu-title"><strong>방송 디자인</strong></div>
+            <ul class="submenu">
                 <li><a href="방송디자인.html">방송 디자인</a></li>
             </ul>
-        </li>
+        </div>
 
-        <li><a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener noreferrer"><strong>문의하기</strong></a></li>
-    </ol>
+        <div class="menu-group contact-group">
+            <div class="menu-title">
+                <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener noreferrer">
+                    <strong>문의하기</strong>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <div class="hero">
         <img src="메인이미지.jpg" alt="R DESIGN 메인 비주얼 이미지" class="main-img">
 
         <div class="hero-text">
-        <h1>감각적인 디자인, 확실한 결과물</h1>
-        <p><strong>게임 홍보지 · 산업 홍보물 · 웹디자인 · 각종 맞춤 디자인 제작</strong></p>
-        <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener noreferrer" class="contact-btn">문의하기</a>
+            <h1>감각적인 디자인, 확실한 결과물</h1>
+            <p><strong>게임 홍보지 · 산업 홍보물 · 웹디자인 · 각종 맞춤 디자인 제작</strong></p>
+            <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener noreferrer" class="contact-btn">문의하기</a>
         </div>
     </div>
+
+    <h2 class="portfolio-title">내 포트폴리오</h2>
+
+    <div class="portfolio-links">
+        <a href="홍보지전단지.html" class="portfolio-card">
+
+            <img src="" class="portfolio-thumb">
+
+            <span class="portfolio-card-title">홍보지/전단지</span>
+            <span class="portfolio-card-desc">게임 · 산업 · 각종 홍보물 디자인</span>
+        </a>
+
+        <a href="상세페이지디자인.html" class="portfolio-card">
+
+            <img src="" class="portfolio-thumb">
+
+            <span class="portfolio-card-title">웹디자인</span>
+            <span class="portfolio-card-desc">상세페이지 · 패키지 · 배너 · 브랜드</span>
+        </a>
+
+        <a href="로고디자인.html" class="portfolio-card">
+
+            <img src="" class="portfolio-thumb">
+
+            <span class="portfolio-card-title">로고/명함 디자인</span>
+            <span class="portfolio-card-desc">브랜드 로고와 명함 디자인 작업물</span>
+        </a>
+
+        <a href="방송디자인.html" class="portfolio-card">
+
+            <img src="" class="portfolio-thumb">
+
+            <span class="portfolio-card-title">방송 디자인</span>
+            <span class="portfolio-card-desc">방송용 썸네일 · 오버레이 · 관련 디자인</span>
+        </a>
+    </div>
+
+    <h2 class="about">소개</h2>
+
+    <p class="about-intro">
+        R DESIGN은 브랜드의 가치를 디자인으로 전달합니다.<br><br>
+        로고, 배너, 홍보지, 상세페이지 등 다양한 디자인 작업을 통해
+        고객의 브랜드가 더 돋보일 수 있도록 돕고 있습니다.<br><br>
+        심플하면서도 전달력 있는 디자인을 목표로
+        각 프로젝트에 맞는 맞춤형 디자인을 제공합니다.
+    </p>
 
     <h2 class="review-title">후기</h2>
 
@@ -439,11 +629,27 @@
         </div>
     </div>
 
+    <div id="bottom-ad-banner" class="bottom-ad-banner">
+
+    <button class="bottom-ad-close" onclick="closeBottomAd()">×</button>
+
+    <a href="https://link.coupang.com/a/d2LM2g" 
+       target="_blank" 
+       rel="noopener noreferrer sponsored"
+       class="bottom-ad-link">
+
+        <img src="오늘의-쿠팡특가.png" 
+             alt="추천 상품" 
+             class="bottom-ad-image">
+
+    </a>
+
+    </div>
+
     <footer>
         COPYRIGHT(C) 2026 R DESIGN ALL RIGHTS RESERVED.
     </footer>
 
-    <!-- 스크롤 등장 효과 -->
     <script>
         const items = document.querySelectorAll('.item');
 
@@ -462,7 +668,6 @@
         items.forEach(item => observer.observe(item));
     </script>
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VJGEDK4Y1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -470,5 +675,12 @@
         gtag('js', new Date());
         gtag('config', 'G-4VJGEDK4Y1');
     </script>
+
+    <script>
+    function closeBottomAd(){
+    document.getElementById("bottom-ad-banner").style.display="none";
+    }
+    </script>
+
 </body>
 </html>
