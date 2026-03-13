@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-    <title>R DESIGN | 홍보지/전단지</title>
+    <title>R DESIGN | 방송 디자인</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,392 +9,315 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
 
-        html {
-            scroll-behavior: smooth;
-        }
+*{box-sizing:border-box;}
 
-        body {
-            background-color: #111;
-            color: #f5f5f5;
-            margin: 0;
-            font-family: 'Noto Sans KR', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+html{scroll-behavior:smooth;}
 
-        a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+body{
+background-color:#111;
+color:#f5f5f5;
+margin:0;
+font-family:'Noto Sans KR',sans-serif;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
 
-        a:hover {
-            color: #c9a96e;
-        }
+a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
 
-        .site-logo {
-            font-size: 60px;
-            text-align: center;
-            border-bottom: 1px solid #2a2a2a;
-            margin: 0;
-            padding: 24px 20px 20px;
-            letter-spacing: 4px;
-            font-weight: 800;
-            background-color: #111;
-        }
+a:hover{color:#c9a96e;}
 
-        /* 상단 메뉴 */
-        .menu-wrap {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-wrap: nowrap;
-            gap: 28px;
-            padding: 20px 20px;
-            background-color: #151515;
-            border-bottom: 1px solid #2a2a2a;
-            text-align: center;
-            overflow-x: auto;
-        }
+.site-logo{
+font-size:60px;
+text-align:center;
+border-bottom:1px solid #2a2a2a;
+margin:0;
+padding:24px 20px 20px;
+letter-spacing:4px;
+font-weight:800;
+background-color:#111;
+}
 
-        .menu-group {
-            min-width: auto;
-            flex: 0 0 auto;
-        }
+/* 메뉴 */
 
-        .menu-title {
-            font-size: 16px;
-            color: #fff;
-            margin-bottom: 0;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
+.menu-wrap{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+flex-wrap:nowrap;
+gap:28px;
+padding:20px;
+background:#151515;
+border-bottom:1px solid #2a2a2a;
+text-align:center;
+overflow-x:auto;
+}
 
-        .menu-title a {
-            color: white;
-            text-decoration: none;
-        }
+.menu-group{flex:0 0 auto;}
 
-        .menu-title a:hover {
-            color: #c9a96e;
-        }
+.menu-title{
+font-size:16px;
+color:#fff;
+white-space:nowrap;
+}
 
-        .submenu {
-            list-style: none;
-            margin: 14px 0 0;
-            padding: 0;
-            display: none;
-        }
+.submenu{
+list-style:none;
+margin:14px 0 0;
+padding:0;
+display:none;
+}
 
-        .menu-wrap:hover .submenu {
-            display: block;
-        }
+.menu-wrap:hover .submenu{display:block;}
 
-        .submenu li {
-            margin: 8px 0;
-            white-space: nowrap;
-        }
+.submenu li{margin:8px 0;}
 
-        .submenu li a {
-            color: #bbb;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+.submenu li a{
+color:#bbb;
+font-size:14px;
+}
 
-        .submenu li a:hover {
-            color: #c9a96e;
-        }
+.submenu li a:hover{color:#c9a96e;}
 
-        .contact-group {
-            display: flex;
-            align-items: flex-start;
-        }
+.page-title{
+text-align:center;
+padding:60px 20px 10px;
+}
 
-        .page-title {
-            text-align: center;
-            padding: 60px 20px 10px;
-        }
+.page-title h2{
+margin:0;
+font-size:36px;
+font-weight:800;
+}
 
-        .page-title h2 {
-            margin: 0;
-            font-size: 36px;
-            font-weight: 800;
-            color: #fff;
-        }
+.page-title p{
+margin-top:12px;
+color:#bbb;
+font-size:16px;
+}
 
-        .page-title p {
-            margin-top: 12px;
-            color: #bbb;
-            font-size: 16px;
-        }
+/* 포트폴리오 */
 
-        .portfolio {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            padding: 40px;
-            max-width: 1400px;
-            margin: 0 auto 100px;
-        }
+.portfolio{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+padding:40px;
+max-width:1400px;
+margin:0 auto 100px;
+}
 
-        .item {
-            background-color: #181818;
-            padding: 12px;
-            border-radius: 18px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-            transition: 0.35s ease;
-        }
+.item{
+background:#181818;
+padding:12px;
+border-radius:18px;
+box-shadow:0 8px 24px rgba(0,0,0,0.25);
+transition:.35s;
+}
 
-        .item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
-        }
+.item:hover{
+transform:translateY(-8px);
+box-shadow:0 14px 30px rgba(0,0,0,0.35);
+}
 
-        .item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border: 1px solid #c9a96e;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.item img{
+width:100%;
+border:1px solid #c9a96e;
+border-radius:12px;
+cursor:pointer;
+}
 
-        .item img:hover {
-            transform: scale(1.02);
-        }
+.modal{
+display:none;
+position:fixed;
+z-index:9999;
+inset:0;
+background:rgba(0,0,0,0.92);
+text-align:center;
+padding:20px;
+}
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.92);
-            text-align: center;
-            padding: 20px;
-        }
+.modal-wrapper{
+position:relative;
+display:inline-block;
+margin-top:30px;
+max-width:90vw;
+max-height:90vh;
+}
 
-        .modal-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-top: 30px;
-            max-width: 90vw;
-            max-height: 90vh;
-        }
+.modal-content{
+max-width:90vw;
+max-height:90vh;
+border-radius:12px;
+}
 
-        .modal-content {
-            display: block;
-            max-width: 90vw;
-            max-height: 90vh;
-            width: auto;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-        }
+.close{
+position:absolute;
+top:12px;
+right:12px;
+color:white;
+background:rgba(0,0,0,0.45);
+font-size:22px;
+width:38px;
+height:38px;
+line-height:38px;
+border-radius:50%;
+cursor:pointer;
+}
 
-        .close {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            color: white;
-            background: rgba(0, 0, 0, 0.45);
-            font-size: 22px;
-            width: 38px;
-            height: 38px;
-            line-height: 38px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
+footer{
+text-align:center;
+padding:20px;
+border-top:1px solid #333;
+color:#888;
+font-size:14px;
+background:#111;
+margin-top:auto;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px 10px;
-            border-top: 1px solid #333;
-            color: #888;
-            font-size: 14px;
-            background-color: #111;
-            margin-top: auto;
-        }
+@media (max-width:1024px){
+.portfolio{grid-template-columns:repeat(3,1fr);}
+}
 
-        @media (max-width: 1024px) {
-            .portfolio {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
+@media (max-width:768px){
 
-        @media (max-width: 768px) {
-            .site-logo {
-                font-size: 38px;
-                padding: 18px 16px 16px;
-                letter-spacing: 2px;
-            }
+.site-logo{font-size:38px;}
 
-            .menu-wrap {
-                flex-direction: column;
-                align-items: center;
-                gap: 18px;
-                padding: 18px 16px;
-                overflow-x: visible;
-            }
+.menu-wrap{
+flex-direction:column;
+align-items:center;
+gap:18px;
+overflow-x:visible;
+}
 
-            .menu-group {
-                width: 100%;
-            }
+.portfolio{
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+padding:20px;
+}
 
-            .menu-title {
-                font-size: 16px;
-            }
+}
 
-            .submenu {
-                margin-top: 8px;
-                text-align: center;
-            }
+@media (max-width:480px){
+.portfolio{grid-template-columns:1fr;}
+}
 
-            .submenu li a {
-                font-size: 14px;
-            }
-
-            .page-title {
-                padding: 40px 20px 0;
-            }
-
-            .page-title h2 {
-                font-size: 28px;
-            }
-
-            .page-title p {
-                font-size: 14px;
-                line-height: 1.6;
-            }
-
-            .portfolio {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 14px;
-                padding: 20px 14px 60px;
-            }
-
-            .item {
-                padding: 8px;
-                border-radius: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .portfolio {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+</style>
 </head>
+
 <body>
-    <div class="site-logo">
-        <a href="index.html"><strong>R DESIGN</strong></a>
-    </div>
 
-    <div class="menu-wrap">
-        <div class="menu-group">
-            <div class="menu-title"><strong>홍보지/전단지</strong></div>
-            <ul class="submenu">
-                <li><a href="홍보지전단지.html">홍보지/전단지</a></li>
-                <li><a href="게임.html">게임 홍보지/전단지</a></li>
-            </ul>
-        </div>
+<div class="site-logo">
+<a href="index.html"><strong>R DESIGN</strong></a>
+</div>
 
-        <div class="menu-group">
-            <div class="menu-title"><strong>웹디자인</strong></div>
-            <ul class="submenu">
-                <li><a href="상세페이지디자인.html">상세페이지 디자인</a></li>
-                <li><a href="패키지디자인.html">패키지 디자인</a></li>
-                <li><a href="배너디자인.html">배너 디자인</a></li>
-                <li><a href="브랜드디자인.html">브랜드 디자인</a></li>
-            </ul>
-        </div>
+<div class="menu-wrap">
 
-        <div class="menu-group">
-            <div class="menu-title"><strong>로고/명함 디자인</strong></div>
-            <ul class="submenu">
-                <li><a href="로고디자인.html">로고 디자인</a></li>
-                <li><a href="명함디자인.html">명함 디자인</a></li>
-            </ul>
-        </div>
+<div class="menu-group">
+<div class="menu-title"><strong>홍보지/전단지</strong></div>
+<ul class="submenu">
+<li><a href="홍보지전단지.html">홍보지/전단지</a></li>
+<li><a href="게임.html">게임 홍보지/전단지</a></li>
+</ul>
+</div>
 
-        <div class="menu-group">
-            <div class="menu-title"><strong>방송 디자인</strong></div>
-            <ul class="submenu">
-                <li><a href="방송디자인.html">방송 디자인</a></li>
-            </ul>
-        </div>
+<div class="menu-group">
+<div class="menu-title"><strong>웹디자인</strong></div>
+<ul class="submenu">
+<li><a href="상세페이지디자인.html">상세페이지 디자인</a></li>
+<li><a href="패키지디자인.html">패키지 디자인</a></li>
+<li><a href="배너디자인.html">배너 디자인</a></li>
+<li><a href="브랜드디자인.html">브랜드 디자인</a></li>
+</ul>
+</div>
 
+<div class="menu-group">
+<div class="menu-title"><strong>로고/명함/라벨 디자인</strong></div>
+<ul class="submenu">
+<li><a href="로고디자인.html">로고 디자인</a></li>
+<li><a href="명함디자인.html">명함 디자인</a></li>
+<li><a href="라벨.html">라벨 디자인</a></li>
+</ul>
+</div>
 
-        <div class="menu-group contact-group">
-            <div class="menu-title">
-                <a href="http://pf.kakao.com/_MPJZX" target="_blank" rel="noopener noreferrer">
-                    <strong>문의하기</strong>
-                </a>
-            </div>
-        </div>
-    </div>
+<div class="menu-group">
+<div class="menu-title"><strong>방송 디자인</strong></div>
+<ul class="submenu">
+<li><a href="방송디자인.html">방송 디자인</a></li>
+</ul>
+</div>
 
-    <section class="page-title">
-        <h2>방송 디자인</h2>
-        <p>클릭하면 이미지를 크게 볼 수 있습니다.</p>
-    </section>
+<div class="menu-group">
+<div class="menu-title">
+<a href="http://pf.kakao.com/_MPJZX" target="_blank"><strong>문의하기</strong></a>
+</div>
+</div>
 
-    <div class="portfolio">
-        <div class="item">
-            <img src="방송1.gif" alt="방송1 이미지" onclick="openModal(this)">
-        </div>
+</div>
 
-        <div class="item">
-            <img src="방송2.jpg" alt="방송2 이미지" onclick="openModal(this)">
-        </div>
+<section class="page-title">
+<h2>방송 디자인</h2>
+<p>클릭하면 이미지를 크게 볼 수 있습니다.</p>
+</section>
 
-        <div class="item">
-            <img src="방송3.jpg" alt="방송3 이미지" onclick="openModal(this)">
-        </div>
+<div class="portfolio">
 
-        <div class="item">
-            <img src="방송4.png" alt="방송4 이미지" onclick="openModal(this)">
-        </div>
-    </div>
+<div class="item">
+<img src="방송1.gif" onclick="openModal(this)">
+</div>
 
-    <div id="modal" class="modal" onclick="closeModal()">
-        <div class="modal-wrapper" onclick="event.stopPropagation()">
-            <img class="modal-content" id="modal-img" alt="확대 이미지">
-            <span class="close" onclick="closeModal()">&times;</span>
-        </div>
-    </div>
+<div class="item">
+<img src="방송2.jpg" onclick="openModal(this)">
+</div>
 
-    <footer>
-        COPYRIGHT(C) 2026 R DESIGN ALL RIGHTS RESERVED.
-    </footer>
+<div class="item">
+<img src="방송3.jpg" onclick="openModal(this)">
+</div>
 
-    <script>
-        function openModal(img) {
-            const modal = document.getElementById("modal");
-            const modalImg = document.getElementById("modal-img");
+<div class="item">
+<img src="방송4.png" onclick="openModal(this)">
+</div>
 
-            modal.style.display = "block";
-            modalImg.src = img.src;
-            modalImg.alt = img.alt;
-        }
+</div>
 
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
+<div id="modal" class="modal" onclick="closeModal()">
+<div class="modal-wrapper" onclick="event.stopPropagation()">
+<img class="modal-content" id="modal-img">
+<span class="close" onclick="closeModal()">&times;</span>
+</div>
+</div>
 
-        document.addEventListener("keydown", function(e) {
-            if (e.key === "Escape") {
-                closeModal();
-            }
-        });
-    </script>
+<footer>
+COPYRIGHT(C) 2026 R DESIGN ALL RIGHTS RESERVED.
+</footer>
+
+<script>
+
+function openModal(img){
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modal-img");
+
+modal.style.display="block";
+modalImg.src=img.src;
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"){
+closeModal();
+}
+});
+
+</script>
+
 </body>
 </html>
